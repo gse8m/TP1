@@ -41,6 +41,7 @@ using std::count_if;
 
 
 using namespace std;
+
 // This simple program reads from a file a set of numbers (double format)
 // computes a running mean value, computes the median after sort
 
