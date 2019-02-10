@@ -55,18 +55,19 @@ int main(int argc, char *argv[]) {
     V.push_back(valeur);
     I.push_back(iden); }
 
-  for (bool FLAG = 0;;) {
-      std::cout << "query> ";
-      std::cin >> identifiant;
+  for (;;) {
+    bool FLAG = 0;
+    std::cout << "query> ";
+    std::cin >> identifiant;
 
-      if (identifiant == "END") { break;
-      } else {
-        for (unsigned i = 0; i < I.size(); i++) {
-          if (identifiant == I[i]) {
-            std::cout << "value[" << I[i] <<"]= " << V[i] << std::endl;
-            FLAG = 1;
-         }}}
-      if (FLAG == 0) std::cout << "This ID does not exists." << std::endl; }
+    if (identifiant == "END") { break;
+    } else {
+      for (unsigned i = 0; i < I.size(); i++) {
+        if (identifiant == I[i]) {
+          std::cout << "value[" << I[i] <<"]= " << V[i] << std::endl;
+          FLAG = 1;
+        }}}
+    if (FLAG == 0) std::cout << "This ID does not exists." << std::endl; }
 
   std::cout << "Bye..." << std::endl;
   return EXIT_SUCCESS;

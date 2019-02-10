@@ -54,7 +54,8 @@ int main(int argc, char *argv[]) {
     V.push_back(valeur);
     I.push_back(iden); }
 
-  for (bool FLAG = 0;;) {
+  for (;;) {
+    bool FLAG = 0;
     std::cout << "query> ";
     std::cin >> identifiant;
 
