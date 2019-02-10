@@ -40,7 +40,6 @@ using std::vector;
 using std::count_if;
 
 
-using namespace std;
 // This simple program reads from a file a set of numbers (double format)
 // computes a running mean value, computes the median after sort
 
@@ -59,17 +58,9 @@ int main(int argc, char *argv[]) {
     buf.push_back(d);
     mean = (buf.size() == 1) ? d : mean + (d - mean) / buf.size();
   }
-  
-  for(unsigned i=0;i<buf.size();i++) {
-    cout<<buf[i]<<endl;
-  }
 
-  cout<<endl;
   std::sort(buf.begin(), buf.end());
-  for(unsigned i=0;i<buf.size();i++) {
-    cout<<buf[i]<<endl;
-  }
-  
+
   auto mid = buf.size() / 2;
   double median = (buf.size() % 2) ? buf[mid] :
                                      (buf[mid - 1] + buf[mid]) / 2;
