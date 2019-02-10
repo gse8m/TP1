@@ -37,7 +37,7 @@
 
 using std::string;
 using std::vector;
-
+using namespace std;
 // This simple program reads from a file a set of numbers (double format)
 // computes a running mean value, computes the median after sort
 
@@ -45,22 +45,22 @@ using std::vector;
 
 int main(int argc, char *argv[]) {
   string file_name{argv[1]};
-  vector<double> buf;
+  vector<string> buf;
   std::ifstream fin(file_name, std::ios::in);
 
   string line;
-  auto mean = 0.0;
 
   while (std::getline(fin, line)) {
-    auto d = std::stod(line);
+    char d=getline(fin);
     buf.push_back(d);
-    cout<<buf[d];
-    mean = (buf.size() == 1) ? d : mean + (d - mean) / buf.size();
+    
+    //istringstream stream(input);
+    //   mean = (buf.size() == 1) ? d : mean + (d - mean) / buf.size();
   }
-d
+
   std::sort(buf.begin(), buf.end());
 
   
   
-  return EXIT_SUCCESS;
+  //return EXIT_SUCCESS;
 }
