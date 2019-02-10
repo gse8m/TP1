@@ -2,5 +2,5 @@
 
 int main{
   s=2;
-  return EXdafdIT_SUCCESS;
+  return EXIT_SUCCESS;
 }
