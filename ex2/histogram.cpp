@@ -43,7 +43,6 @@ using std::count_if;
 // This simple program reads from a file a set of numbers (double format)
 // computes a running mean value, computes the median after sort
 
-// This program has several problems, can you spot them
 
 int main(int argc, char *argv[]) {
   string file_name{argv[1]};
