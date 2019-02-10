@@ -1,12 +1,11 @@
-// Copyright [2019] <SUN,LIU,ZHAO>
 // header-start
 //////////////////////////////////////////////////////////////////////////////////
 //
-// \file      mean_and_median.cpp
+// \file      map1.cpp
 //
 // \brief     This file belongs to the C++ tutorial project
 //
-// \author    Bernard
+// \author    SUN Hao, LIU Bohua, ZHAO Hairen
 //
 // \copyright Copyright ng2goodies 2015
 //            Distributed under the MIT License
@@ -14,7 +13,6 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 // header-end
-//
 
 
 // C++ version
