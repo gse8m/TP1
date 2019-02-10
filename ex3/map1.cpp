@@ -52,8 +52,8 @@ int main(int argc, char *argv[]) {
   vector<string> I;
   vector<double> V;
 
-  string iden,valeur;
-  //  double valeur;
+  string iden;
+  double valeur;
   string line;
   string identifiant;
 
