@@ -1,5 +1,6 @@
 #include<iostream>
 
 int main{
-  return EXIT_SUCCESS;
+  s=2;
+  return EXdafdIT_SUCCESS;
 }
