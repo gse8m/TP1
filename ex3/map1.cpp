@@ -46,6 +46,7 @@ int main(int argc, char *argv[]) {
 
   vector<string> I;
   vector<double> V;
+
   string iden, line, identifiant;
   double valeur;
 
@@ -54,8 +55,7 @@ int main(int argc, char *argv[]) {
     stream >> iden >> valeur;
     // std::cout << iden << "   " << valeur << std::endl;
     V.push_back(valeur);
-    I.push_back(iden);
-  }
+    I.push_back(iden); }
 
   for (bool FLAG = 0;;) {
       std::cout << "query> ";
