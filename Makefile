@@ -21,15 +21,15 @@ CC                 := g++
 OBJDIR             := ./build
 
 CFLAGS_COMMON      := -Wall -Wshadow -Wextra -Wno-unused-parameter -Werror
-CFLAGS_COMMON      += -std=c++11
+CFLAGS_COMMON      += -std=c++14
 
 CFLAGS_DEBUG       := $(CFLAGS_COMMON) -O -g
 CFLAGS             := $(CFLAGS_COMMON) -O3
 
 
-TARGET             := mean_and_median
+TARGET             := histogram
 SRC_FILES          := \
-  ./mean_and_median.cpp
+  ./histogram.cpp
 
 
 OBJECT_FILES       := $(addprefix  $(OBJDIR)/,$(notdir $(SRC_FILES:.cpp=.r.o)))
@@ -38,7 +38,7 @@ DEP_FILES          := $(addprefix  $(OBJDIR)/,$(notdir $(SRC_FILES:.cpp=.r.P)))
 DEP_FILES_DEBUG    := $(addprefix  $(OBJDIR)/,$(notdir $(SRC_FILES:.cpp=.d.P)))
 
 
-all: $(TARGET) c-version
+#all: $(TARGET) c-version
 
 
 $(TARGET): $(OBJECT_FILES) Makefile
@@ -47,8 +47,8 @@ $(TARGET): $(OBJECT_FILES) Makefile
 debug: $(OBJECT_FILES_DEBUG) Makefile
 	$(CC) -o $(TARGET).$@ $(OBJECT_FILES_DEBUG) $(LDFLAGS)
 
-c-version:
-	gcc -O3 -o mean_and_median_c_version ./mean_and_median.c
+#c-version:
+#	gcc -O3 -o histogram_c_version ./histogram.c
 
 
 
