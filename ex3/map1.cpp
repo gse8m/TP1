@@ -49,8 +49,8 @@ int main(int argc, char *argv[]) {
   string file_name{argv[1]};
   std::ifstream fin(file_name, std::ios::in);
 
-  vector<string> I,V;
-  //vector<double> V;
+  vector<string> I;
+  vector<double> V;
 
   string iden,valeur;
   //  double valeur;
