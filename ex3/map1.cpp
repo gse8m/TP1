@@ -1,8 +1,8 @@
-//
+// Copyright [2019] <>
 // header-start
 //////////////////////////////////////////////////////////////////////////////////
 //
-// \file      map1.cpp
+// \file      mean_and_median.cpp
 //
 // \brief     This file belongs to the C++ tutorial project
 //
@@ -14,7 +14,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 // header-end
-//
+//;;;
 
 
 // C++ version
@@ -34,6 +34,8 @@
 #include <fstream>
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
+#include <sstream>
 
 using std::string;
 using std::vector;
@@ -45,22 +47,48 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
   string file_name{argv[1]};
-  vector<string> buf;
   std::ifstream fin(file_name, std::ios::in);
 
+  vector<string> I,V;
+  //vector<double> V;
+
+  string iden,valeur;
+  //  double valeur;
   string line;
+  string identifiant;
 
   while (std::getline(fin, line)) {
-    char d=getline(fin);
-    buf.push_back(d);
+    std::istringstream stream(line);
+    stream >> iden >> valeur;
+    std::cout << iden<<"   "<< valeur<<std::endl;
     
-    //istringstream stream(input);
-    //   mean = (buf.size() == 1) ? d : mean + (d - mean) / buf.size();
+    V.push_back(valeur);
+    I.push_back(iden);
   }
+  for(;;)
+    {
+      bool FLAG=0;
+      std::cout << "query> ";
+      std::cin >> identifiant;
 
-  std::sort(buf.begin(), buf.end());
+      if(identifiant=="END")
+	break;
+      else
+	{
+	  for(unsigned i=0;i<I.size();i++)
+	    {
+	      if(identifiant == I[i])
+		{
+		  std::cout << "value[" << I[i] <<"]= " << V[i] << std::endl;
+		  FLAG=1;
+		}
+	    }
+	}
 
-  
-  
-  //return EXIT_SUCCESS;
+      if(FLAG==0)
+	std::cout << "This ID does not exists."<< std::endl;
+    }
+  std::cout<<"Bye..."<<std::endl;
+  return EXIT_SUCCESS;
 }
+
